@@ -44,7 +44,7 @@ def load():
 
 
 def main():
-    while 1:
+    while True:
         items = []
         jsonArray = load()
         for url in readFile("./search.txt"): 
@@ -55,7 +55,7 @@ def main():
             if(tmp not in jsonArray["Products"]):
                 jsonArray["Products"].append(getName(html))
             items.append(getPrice(html))
-        jsonArray[str(date.today())+"a"] = items
+        jsonArray[str(date.today())] = items
         export(jsonArray)
     time.sleep(3600)
 
